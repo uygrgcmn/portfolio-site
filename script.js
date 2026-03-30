@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // 1. Initial Reveal Stagger (GSAP)
     // Page load animation
     gsap.from(".hero-main-title, .hero-sub-title, .hero-cta-group", {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Typed.js Implementation
     const typed = new Typed('#typed', {
-        strings: ['Full-Stack Engineer', 'System Architect', 'AI Specialist', 'Next-Gen Developer'],
+        strings: ['Full-Stack Engineer', 'System Architect', 'Frontend Focused', 'DevOPS Developer'],
         typeSpeed: 50,
         backSpeed: 30,
         backDelay: 2000,
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const rect = el.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            
+
             gsap.to(el, {
                 x: x * 0.4,
                 y: y * 0.4,
@@ -103,12 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuBtn && navElements) {
         menuBtn.addEventListener("click", () => {
             navElements.classList.toggle("active");
-            
+
             // Toggle Icon
             const isOpen = navElements.classList.contains("active");
             menuBtn.innerHTML = isOpen ? '<i data-feather="x"></i>' : '<i data-feather="menu"></i>';
             feather.replace();
-            
+
             // Prevent body scroll when menu is open
             document.body.style.overflow = isOpen ? 'hidden' : 'auto';
         });
@@ -139,10 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 el.textContent = el.dataset.tr;
             }
         });
-        if(langToggleBtn) langToggleBtn.textContent = currentLang === "tr" ? "EN" : "TR";
+        if (langToggleBtn) langToggleBtn.textContent = currentLang === "tr" ? "EN" : "TR";
     };
 
-    if(langToggleBtn) {
+    if (langToggleBtn) {
         langToggleBtn.addEventListener("click", () => {
             currentLang = currentLang === "tr" ? "en" : "tr";
             updateLanguage();
