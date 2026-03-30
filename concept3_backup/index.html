@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uygar Ali Göçmen | Software Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- İkonlar için FeatherIcons kullanıyoruz -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Vanilla Tilt for 3D interactions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <!-- Three.js ve Vanta.js (Nöron Ağı 3D Evren) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+</head>
+<body>
+    <!-- 3D Vanta Arka Plan (Nöron Ağı) -->
+    <div id="vanta-bg"></div>
+
+    <!-- Özel İmleç Elemanları -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Gezinme Çubuğu -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">&lt;uag/&gt;</a>
+            
+            <!-- Mobil Menü Butonu -->
+            <button class="menu-btn" id="menu-btn">
+                <i data-feather="menu"></i>
+            </button>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" class="nav-item lang-content magnetic" data-tr="Hakkımda" data-en="About">Hakkımda</a>
+                <a href="#experience" class="nav-item lang-content magnetic" data-tr="Deneyim" data-en="Experience">Deneyim</a>
+                <a href="#projects" class="nav-item lang-content magnetic" data-tr="Projeler" data-en="Projects">Projeler</a>
+                <a href="#contact" class="nav-item lang-content magnetic" data-tr="İletişim" data-en="Contact">İletişim</a>
+                <a href="UygarAliGocmenCV.pdf" target="_blank" class="btn btn-outline nav-resume lang-content magnetic" data-tr="Özgeçmiş" data-en="Resume">Özgeçmiş</a>
+                <button id="lang-toggle" class="btn btn-icon lang-toggle-btn magnetic">
+                    EN
+                </button>
+                <button id="theme-toggle" class="btn btn-icon magnetic" aria-label="Toggle Theme">
+                    <i data-feather="sun"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero (Giriş) Bölümü -->
+        <section id="hero" class="hero fade-in-section">
+            <div class="container hero-container" style="display: flex; align-items: center; justify-content: space-between; gap: 40px;">
+                <div class="hero-content">
+                    <p class="hero-greeting lang-content" data-tr="Merhaba, ben" data-en="Hi, my name is">Merhaba, ben</p>
+                    <h1 class="hero-name">Uygar Ali Göçmen.</h1>
+                    <h2 class="hero-title type-effect"><span class="lang-content" data-tr="Frontend Focused" data-en="Frontend Focused">Frontend Focused</span> <br/> <span class="lang-content" data-tr="Full Stack Software Engineer." data-en="Full Stack Software Engineer.">Full Stack Software Engineer.</span></h2>
+                    <p class="hero-desc lang-content" data-tr="Modern web teknolojileri ve kullanıcı deneyimi odaklı yaklaşımlarla, ölçeklenebilir ve performanslı sistemler geliştiriyorum." data-en="I build scalable and high-performance applications with modern web technologies and a focus on user experience.">
+                        Modern web teknolojileri ve kullanıcı deneyimi odaklı yaklaşımlarla, ölçeklenebilir ve performanslı sistemler geliştiriyorum.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary lang-content magnetic" data-tr="Çalışmalarımı İncele" data-en="Check Out My Work">Çalışmalarımı İncele</a>
+                        <a href="https://github.com/uygrgcmn" target="_blank" rel="noopener noreferrer" class="btn btn-icon magnetic">
+                            <i data-feather="github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/uygar-ali-göçmen-3191ba371/" target="_blank" rel="noopener noreferrer" class="btn btn-icon magnetic">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper">
+                    <img src="1772509318220.jpg" alt="Uygar Ali Göçmen" class="hero-profile-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Hakkımda & Yetenekler Bölümü -->
+        <section id="about" class="section fade-in-section">
+            <div class="container">
+                <h2 class="section-title"><span class="lang-content" data-tr="Hakkımda & Yetenekler" data-en="About & Skills">Hakkımda & Yetenekler</span> <span class="line"></span></h2>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="lang-content" data-tr="Yazılım geliştirme tutkum, kullanıcıların hayatına dokunan, teknik olarak mükemmel ve görsel olarak etkileyici ürünler inşa etme isteğinden besleniyor. Hasan Kalyoncu Üniversitesi Yazılım Mühendisliği bölümünde eğitimime devam ediyorum." data-en="My passion for software development is fueled by the desire to build technically excellent and visually impressive products that touch users' lives. I am studying Software Engineering at Hasan Kalyoncu University.">
+                            Yazılım geliştirme tutkum, kullanıcıların hayatına dokunan, teknik olarak mükemmel ve görsel olarak etkileyici ürünler inşa etme isteğinden besleniyor. Hasan Kalyoncu Üniversitesi Yazılım Mühendisliği bölümünde eğitimime devam ediyorum.
+                        </p>
+                        <p class="lang-content" data-tr="Hem mobil tarafta React Native ve Expo ile, hem de backend'de Node.js ve NestJS gibi modern teknolojilerle uygulamalar tasarlıyorum. Yazılımın çeşitli alanlarında, yapay zeka entegrasyonundan gerçek zamanlı iletişim çözümlerine kadar çeşitli projelerde yer aldım." data-en="I design applications both on the mobile side with React Native/Expo, and backend with Node.js/NestJS. I have participated in various projects ranging from AI integration to real-time communication solutions.">
+                            Hem mobil tarafta React Native ve Expo ile, hem de backend'de Node.js ve NestJS gibi modern teknolojilerle uygulamalar tasarlıyorum. Yazılımın çeşitli alanlarında, yapay zeka entegrasyonundan gerçek zamanlı iletişim çözümlerine kadar çeşitli projelerde yer aldım.
+                        </p>
+                    </div>
+
+                    <div class="skills-container">
+                        <h3 class="skills-title lang-content" data-tr="Kullandığım Teknolojiler" data-en="Technologies">Kullandığım Teknolojiler</h3>
+                        <div class="skills-grid">
+                            <div class="skill-tag">JavaScript / ES6+</div>
+                            <div class="skill-tag">TypeScript</div>
+                            <div class="skill-tag">React Native</div>
+                            <div class="skill-tag">Node.js</div>
+                            <div class="skill-tag">NestJS</div>
+                            <div class="skill-tag">PostgreSQL</div>
+                            <div class="skill-tag">SQLite</div>
+                            <div class="skill-tag">MongoDB</div>
+                            <div class="skill-tag">C / C++</div>
+                            <div class="skill-tag">HTML / CSS</div>
+                            <div class="skill-tag">Git / GitHub</div>
+                            <div class="skill-tag">Figma</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deneyim Bölümü -->
+        <section id="experience" class="section fade-in-section">
+            <div class="container">
+                <h2 class="section-title"><span class="lang-content" data-tr="Deneyim" data-en="Experience">Deneyim</span> <span class="line"></span></h2>
+                
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <h3 class="role lang-content" data-tr="Full Stack Developer" data-en="Full Stack Developer">Full Stack Developer</h3>
+                            <h4 class="company">Morphosium <span class="date">2026</span></h4>
+                            <ul>
+                                <li class="lang-content" data-tr="İş süreçlerine yapay zeka teknolojilerini entegre ederek müşterilere rekabet avantajı sağlama." data-en="Provided competitive advantage to customers by integrating AI technologies.">İş süreçlerine yapay zeka teknolojilerini entegre ederek müşterilere rekabet avantajı sağlama.</li>
+                                <li class="lang-content" data-tr="Dil eğitim sistemlerinden özel yapay zeka asistanlarına tasarımlar yapma." data-en="Designed systems ranging from language education to tailored AI assistants.">Dil eğitim sistemlerinden özel yapay zeka asistanlarına tasarımlar yapma.</li>
+                                <li class="lang-content" data-tr="İnsan kaynakları yönetiminden CRM otomasyonlarına kadar mobil uygulamalar geliştirme." data-en="Developed mobile applications for HR management and CRM automations.">İnsan kaynakları yönetiminden CRM otomasyonlarına kadar mobil uygulamalar geliştirme.</li>
+                            </ul>
+                        </div>
+                    </div> 
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <h3 class="role lang-content" data-tr="Freelance Full Stack Developer" data-en="Freelance Full Stack Developer">Freelance Full Stack Developer</h3>
+                            <h4 class="company">Remote <span class="date">2025</span></h4>
+                            <ul>
+                                <li class="lang-content" data-tr="Next.js kullanarak güvenli çekiliş yönetim sistemi tasarlama." data-en="Developing a secure sweepstakes management system using Next.js.">Next.js kullanarak güvenli çekiliş yönetim sistemi tasarlama.</li>
+                                <li class="lang-content" data-tr="Noter uyumlu veri doğrulama ve kullanıcı kimlik doğrulama sistemleri kurma." data-en="Setting up notary-compliant data validation and user authentication systems.">Noter uyumlu veri doğrulama ve kullanıcı kimlik doğrulama sistemleri kurma.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Projeler Bölümü -->
+        <section id="projects" class="section fade-in-section">
+            <div class="container">
+                <h2 class="section-title"><span class="lang-content" data-tr="Projelerim" data-en="Projects">Projelerim</span> <span class="line"></span></h2>
+                
+                <div class="projects-grid">
+                    
+                    <!-- Proje: Zzone SuperApp -->
+                    <div class="project-card glass-card" style="border-color: var(--primary-color);">
+                        <div class="project-header">
+                            <div class="folder-icon"><i data-feather="star"></i></div>
+                            <div class="project-links">
+                                <!-- ZZONE Private/No Repo Provided -->
+                            </div>
+                        </div>
+                        <h3 class="project-title" style="display: flex; align-items: center; justify-content: space-between;">
+                            Zzone SuperApp 
+                            <span class="lang-content" data-tr="En İyi Projem" data-en="Best Project" style="font-size: 0.75rem; background: var(--primary-opacity); color: var(--primary-color); padding: 4px 8px; border-radius: 4px; font-weight: 500;">En İyi Projem</span>
+                        </h3>
+                        <div class="project-desc">
+                            <p class="lang-content" data-tr="Şirketimle beraber yönettiğim bu devasa projede Frontend odaklı Full-Stack Developer olarak görev alıyorum. Oyuncular ve içerik üreticileri için rekabetçi e-spor oyun deneyimini yepyeni bir boyuta taşıyoruz." data-en="I am the Frontend-focused Full-Stack Developer on this massive project co-managed with my company. We are taking the competitive e-sports gaming experience for players and creators to a whole new level.">Şirketimle beraber yönettiğim bu devasa projede Frontend odaklı Full-Stack Developer olarak görev alıyorum. Oyuncular ve içerik üreticileri için rekabetçi e-spor oyun deneyimini yepyeni bir boyuta taşıyoruz.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React Native</li>
+                            <li>NestJS</li>
+                            <li>Full Stack</li>
+                        </ul>
+                    </div>
+
+                    <!-- Proje: EvcilMobil -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="folder-icon"><i data-feather="folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/uygrgcmn/evcilMobil" target="_blank" aria-label="Frontend GitHub Link" title="Frontend Repo"><i data-feather="smartphone"></i></a>
+                                <a href="https://github.com/uygrgcmn/evcilMobil-backend" target="_blank" aria-label="Backend GitHub Link" title="Backend Repo"><i data-feather="server"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">EvcilMobil</h3>
+                        <div class="project-desc">
+                            <p class="lang-content" data-tr="Evcil hayvan sahipleri ile bakıcıları buluşturan kapsamlı mobil uygulama. Hem frontend (React Native) hem de backend (NestJS) altyapısını geliştirdim." data-en="A comprehensive mobile app connecting pet owners with sitters. I developed both the frontend (React Native) and backend (NestJS) architectures.">Evcil hayvan sahipleri ile bakıcıları buluşturan kapsamlı mobil uygulama. Hem frontend (React Native) hem de backend (NestJS) altyapısını geliştirdim.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React Native</li>
+                            <li>NestJS</li>
+                            <li>TypeORM</li>
+                        </ul>
+                    </div>
+
+                    <!-- Proje: NetPersonel -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="folder-icon"><i data-feather="folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/uygrgcmn/NetPersonelMobile" target="_blank" aria-label="GitHub Link"><i data-feather="github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">NetPersonel Mobile</h3>
+                        <div class="project-desc">
+                            <p class="lang-content" data-tr="WhatsApp platformu üzerinden insan kaynakları yönetim süreçlerini dijitalleştiren ve kolaylaştıran kurumsal bir mobil çözüm." data-en="An enterprise mobile solution via WhatsApp that digitalizes and simplifies human resources management processes.">WhatsApp platformu üzerinden insan kaynakları yönetim süreçlerini dijitalleştiren ve kolaylaştıran kurumsal bir mobil çözüm.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React Native</li>
+                            <li>Full Stack</li>
+                        </ul>
+                    </div>
+
+                    <!-- Proje: Inventory -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="folder-icon"><i data-feather="folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/uygrgcmn/mobdev-inventory-system" target="_blank" aria-label="GitHub Link"><i data-feather="github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title lang-content" data-tr="Envanter Yönetim Sistemi (Capstone)" data-en="Inventory Management System">Envanter Yönetim Sistemi (Capstone)</h3>
+                        <div class="project-desc">
+                            <p class="lang-content" data-tr="Gerçek zamanlı envanter takibi için QR kod tarama ve gelişmiş filtreleme özelliklerine sahip mobil uygulama." data-en="Mobile app for real-time inventory tracking with QR code scanning and advanced filtering features.">Gerçek zamanlı envanter takibi için QR kod tarama ve gelişmiş filtreleme özelliklerine sahip mobil uygulama.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React Native</li>
+                            <li>SQLite</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Proje: SubHunter -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="folder-icon"><i data-feather="folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/uygrgcmn/SubHunter" target="_blank" aria-label="GitHub Link"><i data-feather="github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">SubHunter</h3>
+                        <div class="project-desc">
+                            <p class="lang-content" data-tr="Alt alan adlarını (subdomain) hızlı ve etkili bir şekilde taramak/keşfetmek veya sistem izlemek için geliştirilmiş C/C++ projesi." data-en="C/C++ project developed to quickly and effectively scan/discover subdomains or monitor systems.">Alt alan adlarını (subdomain) hızlı ve etkili bir şekilde taramak/keşfetmek veya sistem izlemek için geliştirilmiş C/C++ projesi.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>C / C++</li>
+                        </ul>
+                    </div>
+
+                    <!-- Proje: Offline Chat -->
+                    <div class="project-card glass-card">
+                        <div class="project-header">
+                            <div class="folder-icon"><i data-feather="folder"></i></div>
+                            <div class="project-links">
+                                <a href="https://github.com/uygrgcmn/matlab-offline-chat-application" target="_blank" aria-label="GitHub Link"><i data-feather="github"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">MATLAB Offline Chat</h3>
+                        <div class="project-desc">
+                            <p class="lang-content" data-tr="Bluetooth bağlantısıyla cihazlar arası gerçek zamanlı, çevrimdışı (offline) mesajlaşma imkanı sunan MATLAB uygulaması." data-en="MATLAB application enabling real-time, offline messaging between devices via Bluetooth connectivity.">Bluetooth bağlantısıyla cihazlar arası gerçek zamanlı, çevrimdışı (offline) mesajlaşma imkanı sunan MATLAB uygulaması.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>MATLAB</li>
+                            <li>Bluetooth API</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- İletişim Bölümü -->
+        <section id="contact" class="section fade-in-section">
+            <div class="container contact-container text-center">
+                <h2 class="contact-title lang-content" data-tr="Sıradaki Adım Ne?" data-en="What's Next?">Sıradaki Adım Ne?</h2>
+                <h3 class="contact-subtitle lang-content" data-tr="İletişime Geçin" data-en="Get In Touch">İletişime Geçin</h3>
+                <p class="contact-desc lang-content" data-tr="Şu anda yeni fırsatlara açığım. Bir proje fikriniz varsa ya da sadece merhaba demek isterseniz maille veya telefonla ulaşabilirsiniz." data-en="I am currently open to new opportunities. Just say hi via email or phone!">
+                    Şu anda yeni fırsatlara açığım. Bir proje fikriniz varsa ya da sadece merhaba demek isterseniz maille veya telefonla ulaşabilirsiniz.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:uygaralig@gmail.com" class="btn btn-primary btn-large lang-content" data-tr="Bana Ulaşın" data-en="Email Me">Bana Ulaşın</a>
+                    <a href="tel:+905431578604" class="btn btn-outline btn-large" style="display: flex; align-items: center; gap: 10px;">
+                        <i data-feather="phone"></i> +90 543 157 86 04
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-social">
+                <a href="https://github.com/uygrgcmn" target="_blank" rel="noopener noreferrer"><i data-feather="github"></i></a>
+                <a href="https://www.linkedin.com/in/uygar-ali-göçmen-3191ba371/" target="_blank" rel="noopener noreferrer"><i data-feather="linkedin"></i></a>
+            </div>
+            <p class="copyright"><span class="lang-content" data-tr="Tasarım ve Kodlama" data-en="Designed & Built by">Tasarım ve Kodlama</span> &copy; <span id="year"></span> Uygar Ali Göçmen.</p>
+        </div>
+    </footer>
+
+    <!-- Scriptleri Yükle -->
+    <script>
+        feather.replace();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
