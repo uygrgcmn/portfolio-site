@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Uygar Ali Göçmen - Full-Stack Software Engineer Portfolio. Terminal meets Brutalist Luxury.">
+    <meta name="description"
+        content="Uygar Ali Göçmen - Full-Stack Software Engineer Portfolio. Terminal meets Brutalist Luxury.">
     <title>Uygar Ali Göçmen | Software Engineer</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Syne:wght@400;500;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Syne:wght@400;500;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome (Alternatif İkonlar) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+
     <!-- CSS Styles -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- Typed.js (Hero Typewriter Effect) -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    
+
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
@@ -34,17 +39,26 @@
     <!-- Navigation -->
     <nav class="nav" id="main-nav">
         <div class="container nav-content">
-            <a href="#" class="logo text-display text-accent" style="font-family: var(--font-display); font-weight: 800; font-size: 1.2rem;">UAG</a>
-            
-            <div class="nav-links">
-                <a href="#about" class="lang-content" data-tr="HAKKIMDA" data-en="ABOUT">HAKKIMDA</a>
-                <a href="#projects" class="lang-content" data-tr="PROJELER" data-en="PROJECTS">PROJELER</a>
-                <a href="#contact" class="lang-content" data-tr="İLETİŞİM" data-en="CONTACT">İLETİŞİM</a>
-            </div>
-            
-            <div style="display: flex; gap: 1rem; align-items: center;">
-                <button id="lang-toggle" class="text-mono" style="background: none; border: 1px solid var(--border-color); color: var(--text-muted); padding: 5px 10px; cursor: pointer; font-size: 0.7rem;">EN</button>
-                <a href="#contact" class="btn-brutalist lang-content" data-tr="Hadi Başlayalım" data-en="Let's Build" style="padding: 0.5rem 1rem; font-size: 0.7rem;">Hadi Başlayalım</a>
+            <a href="#" class="logo text-display text-accent"
+                style="font-family: var(--font-display); font-weight: 800; font-size: 1.2rem;">UAG</a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="menu-btn" id="menu-btn">
+                <i data-feather="menu"></i>
+            </button>
+
+            <div class="nav-elements" id="nav-elements">
+                <div class="nav-links">
+                    <a href="#about" class="lang-content" data-tr="HAKKIMDA" data-en="ABOUT">HAKKIMDA</a>
+                    <a href="#projects" class="lang-content" data-tr="PROJELER" data-en="PROJECTS">PROJELER</a>
+                    <a href="#contact" class="lang-content" data-tr="İLETİŞİM" data-en="CONTACT">İLETİŞİM</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button id="lang-toggle" class="text-mono">EN</button>
+                    <a href="#contact" class="btn-brutalist lang-content" data-tr="Hadi Başlayalım"
+                        data-en="Let's Build">Hadi Başlayalım</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -58,10 +72,13 @@
                 <span class="text-muted">I'm a</span> <span id="typed" class="text-accent"></span>
             </div>
             <div class="hero-cta-group">
-                <a href="#projects" class="btn-brutalist lang-content" data-tr="Çalışmalarımı Gör" data-en="View My Work">Çalışmalarımı Gör</a>
+                <a href="#projects" class="btn-brutalist lang-content" data-tr="Çalışmalarımı Gör"
+                    data-en="View My Work">Çalışmalarımı Gör</a>
                 <div style="display: flex; gap: 1.5rem;">
-                    <a href="https://github.com/uygrgcmn" target="_blank" class="text-muted magnetic"><i class="fa-brands fa-github fa-xl"></i></a>
-                    <a href="https://linkedin.com" target="_blank" class="text-muted magnetic"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                    <a href="https://github.com/uygrgcmn" target="_blank" class="text-muted magnetic"><i
+                            class="fa-brands fa-github fa-xl"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="text-muted magnetic"><i
+                            class="fa-brands fa-linkedin fa-xl"></i></a>
                 </div>
             </div>
         </section>
@@ -71,21 +88,28 @@
             <div class="bento-grid about-bento">
                 <!-- Main Intro Card -->
                 <div class="card card-main reveal">
-                    <h2 style="margin-bottom: 2rem;" class="lang-content" data-tr="Kodun Şiire Dönüştüğü Yer" data-en="Where Code Meets Poetics">Kodun Şiire Dönüştüğü Yer</h2>
-                    <p class="text-muted lang-content" data-tr="Yazılım mühendisliği tutkum, yüksek performanslı backend sistemleri ile görsel olarak kusursuz arayüzleri birleştirmek üzerine kurulu. Hasan Kalyoncu Üniversitesi'nde mühendislik eğitimi alırken, endüstride fark yaratan çözümler üretiyorum." data-en="My passion for software engineering is built on merging high-performance backend systems with visually flawless interfaces. While studying engineering at Hasan Kalyoncu University, I build industry-disrupting solutions.">
-                        Yazılım mühendisliği tutkum, yüksek performanslı backend sistemleri ile görsel olarak kusursuz arayüzleri birleştirmek üzerine kurulu. Hasan Kalyoncu Üniversitesi'nde mühendislik eğitimi alırken, endüstride fark yaratan çözümler üretiyorum.
+                    <h2 style="margin-bottom: 2rem;" class="lang-content" data-tr="Kodun Şiire Dönüştüğü Yer"
+                        data-en="Where Code Meets Poetics">Kodun Şiire Dönüştüğü Yer</h2>
+                    <p class="text-muted lang-content"
+                        data-tr="Yazılım mühendisliği tutkum, yüksek performanslı backend sistemleri ile görsel olarak kusursuz arayüzleri birleştirmek üzerine kurulu. Hasan Kalyoncu Üniversitesi'nde mühendislik eğitimi alırken, endüstride fark yaratan çözümler üretiyorum."
+                        data-en="My passion for software engineering is built on merging high-performance backend systems with visually flawless interfaces. While studying engineering at Hasan Kalyoncu University, I build industry-disrupting solutions.">
+                        Yazılım mühendisliği tutkum, yüksek performanslı backend sistemleri ile görsel olarak kusursuz
+                        arayüzleri birleştirmek üzerine kurulu. Hasan Kalyoncu Üniversitesi'nde mühendislik eğitimi
+                        alırken, endüstride fark yaratan çözümler üretiyorum.
                     </p>
                 </div>
-                
+
                 <!-- Stat Card 1 -->
-                <div class="card card-small reveal" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-color: var(--secondary-color);">
-                    <span class="stat-number">5+</span>
+                <div class="card card-small reveal"
+                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-color: var(--secondary-color);">
+                    <span class="stat-number">3+</span>
                     <span class="stat-label">Years Exp</span>
                 </div>
 
                 <!-- Stat Card 2 -->
-                <div class="card card-small reveal" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-color: var(--accent-color);">
-                    <span class="stat-number">30+</span>
+                <div class="card card-small reveal"
+                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-color: var(--accent-color);">
+                    <span class="stat-number">12+</span>
                     <span class="stat-label">Completed Projects</span>
                 </div>
             </div>
@@ -93,34 +117,43 @@
 
         <!-- Tech Stack Bento -->
         <section class="section-padding container">
-            <h2 class="reveal" style="margin-bottom: 3rem; font-size: 1.5rem;" class="lang-content" data-tr="Teknoloji Radarı" data-en="Tech Radar">Teknoloji Radarı</h2>
+            <h2 class="reveal" style="margin-bottom: 3rem; font-size: 1.5rem;" class="lang-content"
+                data-tr="Teknoloji Radarı" data-en="Tech Radar">Teknoloji Radarı</h2>
             <div class="bento-grid">
                 <div class="card reveal" style="grid-column: span 4;">
                     <h3 class="text-accent" style="font-size: 0.9rem; margin-bottom: 1rem;">Frontend</h3>
-                    <div class="text-muted" style="font-size: 0.8rem; line-height: 2;">React Native / TypeScript / Next.js / Syne UI</div>
+                    <div class="text-muted" style="font-size: 0.8rem; line-height: 2;">React Native / TypeScript /
+                        Next.js / Syne UI</div>
                 </div>
                 <div class="card reveal" style="grid-column: span 4;">
                     <h3 class="text-accent" style="font-size: 0.9rem; margin-bottom: 1rem;">Backend</h3>
-                    <div class="text-muted" style="font-size: 0.8rem; line-height: 2;">Node.js / NestJS / PostgreSQL / MongoDB / Redis</div>
+                    <div class="text-muted" style="font-size: 0.8rem; line-height: 2;">Node.js / NestJS / PostgreSQL /
+                        MongoDB / Redis</div>
                 </div>
                 <div class="card reveal" style="grid-column: span 4;">
                     <h3 class="text-accent" style="font-size: 0.9rem; margin-bottom: 1rem;">Languages</h3>
-                    <div class="text-muted" style="font-size: 0.8rem; line-height: 2;">Go / C++ / Python / JavaScript / MATLAB</div>
+                    <div class="text-muted" style="font-size: 0.8rem; line-height: 2;">Go / C++ / Python / JavaScript /
+                        MATLAB</div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="section-padding container">
-            <h2 class="reveal" style="margin-bottom: 4rem;" class="lang-content" data-tr="Seçilmiş İşler" data-en="Selected Works">Seçilmiş İşler</h2>
+            <h2 class="reveal" style="margin-bottom: 4rem;" class="lang-content" data-tr="Seçilmiş İşler"
+                data-en="Selected Works">Seçilmiş İşler</h2>
             <div class="bento-grid">
                 <!-- Featured Project -->
                 <div class="card project-featured reveal">
                     <div style="display: flex; flex-direction: column; justify-content: center;">
-                        <span class="text-accent text-mono" style="font-size: 0.7rem; margin-bottom: 1rem;">// RECENT_TOP_PROJECT</span>
+                        <span class="text-accent text-mono" style="font-size: 0.7rem; margin-bottom: 1rem;">//
+                            RECENT_TOP_PROJECT</span>
                         <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">ZZONE SUPERAPP</h3>
-                        <p class="text-muted lang-content" data-tr="E-spor dünyasını dönüştüren devasa SuperApp projesi. Sistem mimarisi ve frontend geliştirme sorumlusu." data-en="Massive SuperApp transforming the esports world. Responsible for system architecture and frontend development.">
-                            E-spor dünyasını dönüştüren devasa SuperApp projesi. Sistem mimarisi ve frontend geliştirme sorumlusu.
+                        <p class="text-muted lang-content"
+                            data-tr="E-spor dünyasını dönüştüren devasa SuperApp projesi. Sistem mimarisi ve frontend geliştirme sorumlusu."
+                            data-en="Massive SuperApp transforming the esports world. Responsible for system architecture and frontend development.">
+                            E-spor dünyasını dönüştüren devasa SuperApp projesi. Sistem mimarisi ve frontend geliştirme
+                            sorumlusu.
                         </p>
                         <div style="margin: 1.5rem 0;">
                             <span class="tech-tag">React Native</span>
@@ -128,28 +161,35 @@
                         </div>
                         <a href="#" class="btn-brutalist" style="font-size: 0.75rem; width: fit-content;">Case Study</a>
                     </div>
-                    <div class="project-thumbnail" style="background: linear-gradient(45deg, #111, #222); position: relative; border: 1px solid var(--border-color);">
-                        <div style="position: absolute; bottom: 20px; left: 20px; font-family: var(--font-mono); font-size: 0.6rem; opacity: 0.3;">IMAGE_PLACEHOLDER_404</div>
+                    <div class="project-thumbnail"
+                        style="background: linear-gradient(45deg, #111, #222); position: relative; border: 1px solid var(--border-color);">
+                        <div
+                            style="position: absolute; bottom: 20px; left: 20px; font-family: var(--font-mono); font-size: 0.6rem; opacity: 0.3;">
+                            IMAGE_PLACEHOLDER_404</div>
                     </div>
                 </div>
 
                 <!-- Small Project 1 -->
                 <div class="card reveal" style="grid-column: span 6;">
                     <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">EvcilMobil</h3>
-                    <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1.5rem;">Pet-sitter marketplace built with NestJS and React Native.</p>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1.5rem;">Pet-sitter marketplace
+                        built with NestJS and React Native.</p>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="tech-tag">Full Stack</div>
-                        <a href="https://github.com/uygrgcmn/evcilMobil" target="_blank" class="text-accent"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://github.com/uygrgcmn/evcilMobil" target="_blank" class="text-accent"><i
+                                class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
                 <!-- Small Project 2 -->
                 <div class="card reveal" style="grid-column: span 6;">
                     <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">NetPersonel</h3>
-                    <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1.5rem;">Enterprise HR tool integrated with WhatsApp automation.</p>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1.5rem;">Enterprise HR tool
+                        integrated with WhatsApp automation.</p>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="tech-tag">Automation</div>
-                        <a href="https://github.com/uygrgcmn/NetPersonelMobile" target="_blank" class="text-accent"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://github.com/uygrgcmn/NetPersonelMobile" target="_blank" class="text-accent"><i
+                                class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -157,39 +197,57 @@
 
         <!-- Experience Timeline -->
         <section class="section-padding container">
-            <h2 class="reveal" style="margin-bottom: 4rem;" class="lang-content" data-tr="Kariyer Hattı" data-en="Career Path">Kariyer Hattı</h2>
+            <h2 class="reveal" style="margin-bottom: 4rem;" class="lang-content" data-tr="Kariyer Hattı"
+                data-en="Career Path">Kariyer Hattı</h2>
             <div style="max-width: 900px;">
-                <div class="reveal" style="border-left: 2px solid var(--accent-color); padding-left: 2rem; margin-bottom: 3rem; position: relative;">
-                    <div style="position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background-color: var(--accent-color); border-radius: 50%;"></div>
+                <div class="reveal"
+                    style="border-left: 2px solid var(--accent-color); padding-left: 2rem; margin-bottom: 3rem; position: relative;">
+                    <div
+                        style="position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background-color: var(--accent-color); border-radius: 50%;">
+                    </div>
                     <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Morphosium</h3>
-                    <p class="text-accent text-mono" style="font-size: 0.8rem; margin-bottom: 1rem;">Full Stack Developer | 2026 - Present</p>
-                    <p class="text-muted" style="font-size: 0.9rem;">Building AI-powered human resources and CRM automations. Leading frontend initiatives for complex data-dashboards.</p>
+                    <p class="text-accent text-mono" style="font-size: 0.8rem; margin-bottom: 1rem;">Full Stack
+                        Developer | 2026 - Present</p>
+                    <p class="text-muted" style="font-size: 0.9rem;">Building AI-powered human resources and CRM
+                        automations. Leading frontend initiatives for complex data-dashboards.</p>
                 </div>
-                
-                <div class="reveal" style="border-left: 2px solid var(--border-color); padding-left: 2rem; margin-bottom: 3rem; position: relative;">
-                    <div style="position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background-color: var(--surface-color); border: 2px solid var(--border-color); border-radius: 50%;"></div>
+
+                <div class="reveal"
+                    style="border-left: 2px solid var(--border-color); padding-left: 2rem; margin-bottom: 3rem; position: relative;">
+                    <div
+                        style="position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background-color: var(--surface-color); border: 2px solid var(--border-color); border-radius: 50%;">
+                    </div>
                     <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Freelance</h3>
-                    <p class="text-muted text-mono" style="font-size: 0.8rem; margin-bottom: 1rem;">Software Engineer | 2024 - 2026</p>
-                    <p class="text-muted" style="font-size: 0.9rem;">Architected secure sweepstakes systems and notary-compliant validation engines for diverse clients.</p>
+                    <p class="text-muted text-mono" style="font-size: 0.8rem; margin-bottom: 1rem;">Software Engineer |
+                        2024 - 2026</p>
+                    <p class="text-muted" style="font-size: 0.9rem;">Architected secure sweepstakes systems and
+                        notary-compliant validation engines for diverse clients.</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section-padding container" style="position: relative; overflow: hidden; padding-bottom: 12rem;">
+        <section id="contact" class="section-padding container"
+            style="position: relative; overflow: hidden; padding-bottom: 12rem;">
             <div class="contact-bg-text">LET'S BUILD SOMETHING</div>
-            
+
             <div class="reveal" style="max-width: 700px;">
-                <span class="text-accent text-mono" style="font-size: 0.7rem; margin-bottom: 1rem;">// TRANSMISSION.send()</span>
-                <h2 style="font-size: 3rem; margin-bottom: 2rem;" class="lang-content" data-tr="Sıradakini Beraber Kuralım" data-en="Let's Start Your Project">Sıradakini Beraber Kuralım</h2>
+                <span class="text-accent text-mono" style="font-size: 0.7rem; margin-bottom: 1rem;">//
+                    TRANSMISSION.send()</span>
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;" class="lang-content"
+                    data-tr="Sıradakini Beraber Kuralım" data-en="Let's Start Your Project">Sıradakini Beraber Kuralım
+                </h2>
                 <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
                     <a href="mailto:uygaralig@gmail.com" class="btn-brutalist">uygaralig@gmail.com</a>
-                    <a href="tel:+905431578604" class="text-muted text-mono" style="display: flex; align-items: center; gap: 10px;">+90 543 157 8604</a>
+                    <a href="tel:+905431578604" class="text-muted text-mono"
+                        style="display: flex; align-items: center; gap: 10px;">+90 543 157 8604</a>
                 </div>
-                
+
                 <div style="margin-top: 4rem; display: flex; gap: 2rem;">
-                    <a href="https://github.com/uygrgcmn" target="_blank" class="text-muted text-mono" style="font-size: 0.75rem;">GitHub</a>
-                    <a href="https://linkedin.com" target="_blank" class="text-muted text-mono" style="font-size: 0.75rem;">LinkedIn</a>
+                    <a href="https://github.com/uygrgcmn" target="_blank" class="text-muted text-mono"
+                        style="font-size: 0.75rem;">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" class="text-muted text-mono"
+                        style="font-size: 0.75rem;">LinkedIn</a>
                     <a href="#" class="text-muted text-mono" style="font-size: 0.75rem;">Twitter (X)</a>
                 </div>
             </div>
@@ -197,7 +255,8 @@
     </main>
 
     <footer class="footer">
-        <div class="container" style="display: flex; justify-content: space-between; color: var(--text-muted); opacity: 0.5;">
+        <div class="container"
+            style="display: flex; justify-content: space-between; color: var(--text-muted); opacity: 0.5;">
             <span>&copy; 2026 Uygar Ali Göçmen. All rights reserved.</span>
             <span>Designed & Built with Precision</span>
         </div>
@@ -209,4 +268,5 @@
         feather.replace();
     </script>
 </body>
+
 </html>

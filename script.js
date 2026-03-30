@@ -86,14 +86,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 6. Navbar Scroll Behavior
+    // 6. Navbar Scroll Behavior & Mobile Menu Toggle
     const nav = document.getElementById("main-nav");
+    const menuBtn = document.getElementById("menu-btn");
+    const navElements = document.getElementById("nav-elements");
+    const navLinksItems = document.querySelectorAll(".nav-links a");
+
     window.addEventListener("scroll", () => {
         if (window.scrollY > 100) {
             nav.classList.add("scrolled");
         } else {
             nav.classList.remove("scrolled");
         }
+    });
+
+    if (menuBtn && navElements) {
+        menuBtn.addEventListener("click", () => {
+            navElements.classList.toggle("active");
+            
+            // Toggle Icon
+            const isOpen = navElements.classList.contains("active");
+            menuBtn.innerHTML = isOpen ? '<i data-feather="x"></i>' : '<i data-feather="menu"></i>';
+            feather.replace();
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+        });
+    }
+
+    // Close menu when a link is clicked
+    navLinksItems.forEach(link => {
+        link.addEventListener("click", () => {
+            if (navElements.classList.contains("active")) {
+                navElements.classList.remove("active");
+                menuBtn.innerHTML = '<i data-feather="menu"></i>';
+                feather.replace();
+                document.body.style.overflow = 'auto';
+            }
+        });
     });
 
     // 7. Language Switcher Logic

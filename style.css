@@ -123,6 +123,12 @@ h1, h2, h3 {
   align-items: center;
 }
 
+.nav-elements {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
@@ -130,6 +136,37 @@ h1, h2, h3 {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-actions button#lang-toggle {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: var(--transition-fast);
+}
+
+.nav-actions button#lang-toggle:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  cursor: pointer;
+  z-index: 2000;
+  padding: 0.5rem;
 }
 
 .nav-links a {
@@ -154,22 +191,24 @@ h1, h2, h3 {
 }
 
 .hero-main-title {
-  font-size: clamp(4rem, 12vw, 10rem);
+  font-size: clamp(3rem, 15vw, 9rem); /* Smarter scaling for mobile */
   margin-bottom: 1rem;
   font-weight: 900;
+  line-height: 0.85;
 }
 
 .hero-sub-title {
   font-family: var(--font-mono);
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.9rem, 4vw, 1.3rem);
   color: var(--accent-color);
   margin-bottom: 2rem;
 }
 
 .hero-cta-group {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
+  flex-wrap: wrap; /* Prevent button overflow on very small devices */
 }
 
 /* Typewriter efekt konteynırı */
@@ -311,8 +350,68 @@ h1, h2, h3 {
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-  .about-bento .card-main, .about-bento .card-small { grid-column: span 12; }
+  .section-padding { padding: 5rem 0; }
+  
+  .about-bento .card-main, 
+  .about-bento .card-small,
+  .bento-grid .card { 
+    grid-column: span 12 !important; 
+  }
+  
   .project-featured { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .hero { text-align: center; align-items: center; }
+  .hero-cta-group { justify-content: center; }
+  
+  /* Mobile Menu Overlay */
+  .menu-btn { display: block; }
+  
+  .nav-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1500;
+  }
+  
+  .nav-elements.active {
+    transform: translateY(0);
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+  }
+  
+  .nav-actions {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-bg-text {
+    font-size: 20vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-main-title { font-size: 3.5rem; }
+  .card { padding: 1.5rem; }
 }
 
 /* Animation triggers */
